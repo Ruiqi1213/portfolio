@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WRQ Portfolio | 科技作品集</title>
+    <title>WRQ PORTFOLIO | 访问授权</title>
     <style>
         :root {
-            --neon-blue: #00f2ff;
-            --dark-bg: #0a0b10;
+            --tech-cyan: #00f2ff;
+            --tech-bg: #050608;
+            --tech-line: rgba(0, 242, 255, 0.15);
         }
 
         body {
@@ -17,101 +18,100 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: var(--dark-bg);
-            background-image: 
-                radial-gradient(circle at 2px 2px, rgba(0, 242, 255, 0.05) 1px, transparent 0);
-            background-size: 40px 40px; /* 背景网格点阵，增加科技感 */
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--tech-bg);
+            /* 科技感点阵背景 */
+            background-image: radial-gradient(var(--tech-line) 1px, transparent 1px);
+            background-size: 30px 30px;
+            font-family: 'Orbitron', 'Segoe UI', sans-serif;
+            color: white;
             overflow: hidden;
         }
 
-        /* 科技感装饰框 */
-        .tech-card {
+        /* 核心卡片容器 */
+        .main-frame {
             position: relative;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 50px 60px;
-            border: 1px solid rgba(0, 242, 255, 0.2);
-            border-radius: 4px;
+            width: 320px;
+            padding: 40px;
+            background: rgba(0, 20, 30, 0.8);
+            border: 1px solid var(--tech-line);
+            backdrop-filter: blur(8px);
             text-align: center;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 30px rgba(0, 242, 255, 0.05);
         }
 
-        /* 四角装饰点 */
-        .tech-card::before {
+        /* 扫描线动画 */
+        .main-frame::before {
             content: "";
             position: absolute;
-            top: -2px; left: -2px; width: 20px; height: 20px;
-            border-top: 2px solid var(--neon-blue); border-left: 2px solid var(--neon-blue);
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: var(--tech-cyan);
+            box-shadow: 0 0 15px var(--tech-cyan);
+            animation: scan 4s linear infinite;
         }
 
-        .tech-card::after {
-            content: "";
-            position: absolute;
-            bottom: -2px; right: -2px; width: 20px; height: 20px;
-            border-bottom: 2px solid var(--neon-blue); border-right: 2px solid var(--neon-blue);
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
         }
 
         h1 {
-            color: #fff;
-            font-size: 28px;
-            letter-spacing: 4px;
+            font-size: 22px;
+            letter-spacing: 5px;
             margin: 0;
-            text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+            color: #fff;
+            text-shadow: 0 0 8px var(--tech-cyan);
         }
 
-        .subtitle {
-            color: var(--neon-blue);
-            font-size: 12px;
-            margin-top: 10px;
-            margin-bottom: 40px;
-            opacity: 0.8;
+        .user-id {
+            font-size: 10px;
+            color: var(--tech-cyan);
+            margin: 10px 0 40px 0;
+            font-family: monospace;
             letter-spacing: 2px;
         }
 
-        /* 呼吸灯特效下载按钮 */
-        .download-btn {
+        /* 科技风格下载按钮 */
+        .btn-download {
             position: relative;
             display: inline-block;
-            padding: 15px 40px;
-            color: var(--neon-blue);
+            padding: 15px 30px;
+            border: 1px solid var(--tech-cyan);
+            color: var(--tech-cyan);
             text-decoration: none;
-            text-transform: uppercase;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
-            border: 1px solid var(--neon-blue);
-            overflow: hidden;
-            transition: 0.5s;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            background: transparent;
         }
 
-        .download-btn:hover {
-            background: var(--neon-blue);
+        .btn-download:hover {
+            background: var(--tech-cyan);
             color: #000;
-            box-shadow: 0 0 35px var(--neon-blue);
+            box-shadow: 0 0 20px var(--tech-cyan);
+            cursor: pointer;
         }
 
-        .system-status {
+        .footer-code {
             margin-top: 30px;
-            color: rgba(255,255,255,0.3);
-            font-size: 10px;
+            font-size: 9px;
+            color: rgba(255, 255, 255, 0.2);
             font-family: monospace;
         }
     </style>
 </head>
 <body>
 
-    <div class="tech-card">
+    <div class="main-frame">
         <h1>WANG RUIQI</h1>
-        <div class="subtitle">INDUSTRIAL DESIGN PORTFOLIO // 2020-2024</div>
+        <div class="user-id">IDENTIFIED: INDUSTRIAL DESIGNER</div>
         
-        <a href="Wang_Ruiqi_Portfolio.pdf" download="王瑞琪作品集.pdf" class="download-btn">
-            Download PDF
+        <a href="Portfolio_WangRuiqi.pdf" download="王瑞琪作品集.pdf" class="btn-download">
+            DOWNLOAD PORTFOLIO
         </a>
 
-        <div class="system-status">
-            SYSTEM READY > ACCESS GRANTED > FILE: PORTFOLIO_V1.PDF
+        <div class="footer-code">
+            STATUS: ENCRYPTED ACCESS<br>
+            FILE_ID: PRTF_WRQ_2026
         </div>
     </div>
 
