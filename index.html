@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>王瑞琪的作品集 | Portfolio</title>
+    <title>WRQ Portfolio | 科技作品集</title>
     <style>
-        /* 极简样式设计 */
+        :root {
+            --neon-blue: #00f2ff;
+            --dark-bg: #0a0b10;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -13,65 +17,101 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f5f5f7; /* 苹果风浅灰色背景 */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--dark-bg);
+            background-image: 
+                radial-gradient(circle at 2px 2px, rgba(0, 242, 255, 0.05) 1px, transparent 0);
+            background-size: 40px 40px; /* 背景网格点阵，增加科技感 */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden;
         }
 
-        .container {
+        /* 科技感装饰框 */
+        .tech-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 50px 60px;
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            border-radius: 4px;
             text-align: center;
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.05);
+        }
+
+        /* 四角装饰点 */
+        .tech-card::before {
+            content: "";
+            position: absolute;
+            top: -2px; left: -2px; width: 20px; height: 20px;
+            border-top: 2px solid var(--neon-blue); border-left: 2px solid var(--neon-blue);
+        }
+
+        .tech-card::after {
+            content: "";
+            position: absolute;
+            bottom: -2px; right: -2px; width: 20px; height: 20px;
+            border-bottom: 2px solid var(--neon-blue); border-right: 2px solid var(--neon-blue);
         }
 
         h1 {
-            color: #1d1d1f;
-            font-size: 24px;
-            margin-bottom: 0.5rem;
+            color: #fff;
+            font-size: 28px;
+            letter-spacing: 4px;
+            margin: 0;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
         }
 
-        p {
-            color: #86868b;
-            margin-bottom: 2rem;
+        .subtitle {
+            color: var(--neon-blue);
+            font-size: 12px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            opacity: 0.8;
+            letter-spacing: 2px;
         }
 
+        /* 呼吸灯特效下载按钮 */
         .download-btn {
+            position: relative;
             display: inline-block;
-            background-color: #0071e3; /* 蓝色按钮 */
-            color: white;
+            padding: 15px 40px;
+            color: var(--neon-blue);
             text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid var(--neon-blue);
+            overflow: hidden;
+            transition: 0.5s;
+            letter-spacing: 3px;
         }
 
         .download-btn:hover {
-            background-color: #0077ed;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,113,227,0.3);
+            background: var(--neon-blue);
+            color: #000;
+            box-shadow: 0 0 35px var(--neon-blue);
         }
 
-        .file-info {
-            margin-top: 1rem;
-            font-size: 12px;
-            color: #b0b0b5;
+        .system-status {
+            margin-top: 30px;
+            color: rgba(255,255,255,0.3);
+            font-size: 10px;
+            font-family: monospace;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>王瑞琪作品集</h1>
-        <p>Industrial Design Portfolio (2020-2024)</p>
+    <div class="tech-card">
+        <h1>WANG RUIQI</h1>
+        <div class="subtitle">INDUSTRIAL DESIGN PORTFOLIO // 2020-2024</div>
         
         <a href="Wang_Ruiqi_Portfolio.pdf" download="王瑞琪作品集.pdf" class="download-btn">
-            立即下载 PDF
+            Download PDF
         </a>
 
-        <div class="file-info">
-            支持在移动端和桌面端下载
+        <div class="system-status">
+            SYSTEM READY > ACCESS GRANTED > FILE: PORTFOLIO_V1.PDF
         </div>
     </div>
 
